@@ -1,0 +1,16 @@
+TODO list
+=========
+
+1.-Back en Laravel
+2.-Login
+3.-Parte superior -> nombre de user y logout
+	Cuadricula con los productos
+4.-Al hacer click en uno de los productos -> detalle
+	detalle -> precio - pais - kcal/unidad - kcal/100g - info. nutricional
+5.-detalle -> 2 botones: a)comprar, b)volver
+6.-botón comprar -> redirige a recoger producto. Vuelve a home a los 5seg
+7.-Sin formularios
+8.-Sin gestión de pagos
+
+9.-modo quiosco
+10.-obligatorio migraciones
