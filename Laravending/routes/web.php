@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/acceso', function () {
+    return view('acceso');
+})->middleware('guest');
+
+Route::post('/acceso', [userController::class, 'acceder'])->name('login');
+
+Route::get('/productos', function () {
+    return view('productos');
+})->middleware('auth');
+
+Route::get('/detalle/{id}', function () {
+    return view('detalle');
+});
+
+Route::get('/compraRealizada', function () {
+    return view('compraRealizada');
 });
