@@ -25,24 +25,49 @@ ul li a {
 }
 
 #centrar {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                margin-right: -50%;
-                transform: translate(-50%, -50%);
-            }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+h1, h2{
+    margin-left: 8px;
+}
+
+#products{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+table{
+    margin-top: 72px;
+}
+
+img{
+    width: 8vw;
+    height: 20vh;
+}
 </style>
 </head>
 
 <body>
     <div class='header'>
-        <h1>Video Club</h1>
+        <h1>LARAVENDING</h1>
+        <h2>Hola Eric</h2>
+
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/llista">Llistat</a></li>
-                <li><a href="/newMovie">Nueva película</a></li>
-                <li><a href="/contactar">Contacta</a></li>
+                <li>
+                    <form action="/logout" method="POST">
+                        @csrf
+                        <a href="#" onclick="this.closest('form').submit()">Log out</a>
+                    </form>
+                </li>
             </ul>
         </nav>
     </div>

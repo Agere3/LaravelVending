@@ -22,8 +22,6 @@ Route::get('/acceso', function () {
     return view('acceso');
 })->middleware('guest');
 
-Route::post('/acceso', [userController::class, 'acceder'])->name('login');
-
 Route::get('/productos', function () {
     return view('productos');
 })->middleware('auth');
@@ -35,3 +33,8 @@ Route::get('/detalle/{id}', function () {
 Route::get('/compraRealizada', function () {
     return view('compraRealizada');
 });
+
+
+Route::post('/acceso', [userController::class, 'acceder'])->name('login');
+
+Route::post('/logout', [userController::class, 'logout'])->name('logout');

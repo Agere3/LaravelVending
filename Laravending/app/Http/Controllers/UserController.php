@@ -5,22 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Routing\Redirector;
+use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
-    public function prova(){
-        return "Si, todo bien";
-    }
-
-    public function acceder(Request $req){
+    public function acceder(Request $req, Redirector $redirect){
         $credentials = $req->only('name','password');
 
         if(Auth::attempt($credentials)){
             request()->session()->regenerate();
             return view('productos',array($req['name']));
         }
-        return view('acceso');
+        // return $redirect->to('/acceso');
+        throw ValidationException::withMessages([
+            'name' => __('auth.failed') + "<br>"
+        ]);
+    }
 
-        // if($username==$pwd) return view('compraRealizada');
+    public function logout(Redirector $redirect){
+        Auth::logout();
+        return $redirect->to('/acceso')->with('status',"Has cerrado sesión correctamente");
     }
 }
