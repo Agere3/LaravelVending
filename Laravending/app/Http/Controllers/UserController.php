@@ -24,6 +24,6 @@ class UserController extends Controller
 
     public function logout(Redirector $redirect){
         Auth::logout();
-        return $redirect->to('/acceso')->with('status',"Has cerrado sesión correctamente");
+        return $redirect->to('/acceso')->with('status',"Has tancat la sesiò");
     }
 }

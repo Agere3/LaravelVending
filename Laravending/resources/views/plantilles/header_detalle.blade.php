@@ -11,7 +11,7 @@
     <div class='header'>
         <form action="/productos" method="GET">
             @csrf
-            <button>Retroceder</button>
+            <button>Anar enrere</button>
         </form>
         </nav>
     </div>

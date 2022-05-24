@@ -34,17 +34,17 @@
     </head>
     <body>
         <div id="centrar">
-            <h1>ACCESO</h1>
+            <h1>ACCES</h1>
             <form action="acceso" method="POST">
             @csrf
-                <label for="name">Usuario:</label><br>
+                <label for="name">Usuari:</label><br>
                 <input type="text" id="name" name="name" placeholder="Usuario"><br>
-                <label for="password">Contraseña:</label><br>
+                <label for="password">Contrasenya:</label><br>
                 <input type="password" id="password" name="password" placeholder="Contraseña"><br>
                 {{session('status')}}
                 @error('name') {{$message}} @enderror
                     <br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Entrar">
             </form>
         </div>
 

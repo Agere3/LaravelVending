@@ -24,12 +24,10 @@ Route::get('/detalle', function () {
 
 Route::get('/consulta/{id}', function ($id) {
     $producto = App\Models\products::where('id',$id)->get();
-    $precio = App\Models\products::where('id',$id)->get('precio');
     return view('detalle', array('producto'=>$producto[0]));
 });
 
 Route::put('/compraRealizada/{precio}', function ($precio) {
-    return $precio;
     return view('compraRealizada');
 });
 

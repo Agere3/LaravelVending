@@ -65,7 +65,7 @@ img{
                 <li>
                     <form action="/logout" method="POST">
                         @csrf
-                        <a href="#" onclick="this.closest('form').submit()">Log out</a>
+                        <a href="#" onclick="this.closest('form').submit()">Tancar sesiò</a>
                     </form>
                 </li>
             </ul>
