@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>VideoClub</title>
+<title>LARAVENDING</title>
 <meta charset="UTF-8">
 
 <style>
@@ -58,7 +58,7 @@ img{
 <body>
     <div class='header'>
         <h1>LARAVENDING</h1>
-        <h2>Hola Eric</h2>
+        <h2>Hola {{$username}}</h2>
 
         <nav>
             <ul>

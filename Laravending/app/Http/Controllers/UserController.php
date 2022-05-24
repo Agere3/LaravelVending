@@ -14,10 +14,8 @@ class UserController extends Controller
         $credentials = $req->only('name','password');
 
         if(Auth::attempt($credentials)){
-            request()->session()->regenerate();
-            return view('productos',array($req['name']));
+            return $redirect->to('/acceso');
         }
-        // return $redirect->to('/acceso');
         throw ValidationException::withMessages([
             'name' => __('auth.failed') + "<br>"
         ]);

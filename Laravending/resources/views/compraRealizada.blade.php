@@ -34,5 +34,10 @@
             <p>El seu producte està sent expedit</p>
             <p>El podrà recollir per la comporta inferior de la máquina</p>
         </div>
+        <script>
+            setTimeout(function() {
+                window.location.href = "/productos"
+            }, 5000);
+        </script>
     </body>
 </html>
