@@ -41,10 +41,9 @@
                 <input type="text" id="name" name="name" placeholder="Usuario"><br>
                 <label for="password">Contraseña:</label><br>
                 <input type="password" id="password" name="password" placeholder="Contraseña"><br>
+                {{session('status')}}
                 @error('name') {{$message}} @enderror
-                @if ($errors->any())
                     <br>
-                @endif
                 <input type="submit" value="Submit">
             </form>
         </div>

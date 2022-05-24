@@ -58,7 +58,7 @@ img{
 <body>
     <div class='header'>
         <h1>LARAVENDING</h1>
-        <h2>Hola {{$username}}</h2>
+        <h2>Hola {{auth()->user()->name}}</h2>
 
         <nav>
             <ul>

@@ -14,15 +14,15 @@ Route::get('/acceso', function () {
 
 Route::get('/productos', function () {
     $productos = App\Models\products::all();
-    return view('productos', array('username'=>"patata",'listado'=>$productos));
+    return view('productos', array('listado'=>$productos));
 })->middleware('auth');
 
 Route::get('/detalle', function () {
     return view('detalle');
 });
 
-Route::get('/consulta/{id}', function () {
-    $producto = App\Models\products::where('id',1)->get();
+Route::get('/consulta/{id}', function ($id) {
+    $producto = App\Models\products::where('id',$id)->get();
     return view('detalle', array('producto'=>$producto[0]));
 });
 
