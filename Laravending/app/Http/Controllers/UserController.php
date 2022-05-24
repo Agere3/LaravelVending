@@ -12,6 +12,7 @@ class UserController extends Controller
 {
     public function acceder(Request $req, Redirector $redirect){
         $credentials = $req->only('name','password');
+        // return $credentials;
 
         if(Auth::attempt($credentials)){
             return $redirect->to('/acceso');

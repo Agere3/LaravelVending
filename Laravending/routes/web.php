@@ -14,6 +14,7 @@ Route::get('/acceso', function () {
 
 Route::get('/productos', function () {
     $productos = App\Models\products::all();
+    $productos->sortBy("id");
     return view('productos', array('listado'=>$productos));
 })->middleware('auth');
 
@@ -23,13 +24,14 @@ Route::get('/detalle', function () {
 
 Route::get('/consulta/{id}', function ($id) {
     $producto = App\Models\products::where('id',$id)->get();
+    $precio = App\Models\products::where('id',$id)->get('precio');
     return view('detalle', array('producto'=>$producto[0]));
 });
 
-Route::post('/compraRealizada', function () {
+Route::put('/compraRealizada/{precio}', function ($precio) {
+    return $precio;
     return view('compraRealizada');
 });
-
 
 Route::post('/acceso', [userController::class, 'acceder'])->name('login');
 
